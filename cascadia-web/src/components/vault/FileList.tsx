@@ -151,6 +151,12 @@ export function FileList({
 
   const loadFiles = () => invalidate('files')
 
+  const handlePreview = (file: FileRecord) => {
+    if (!isPreviewable(file.originalFileName, file.fileSize)) return
+    if (onPreviewFile) onPreviewFile(file)
+    else setPreviewFile(file)
+  }
+
   const handleDownload = async (file: FileRecord) => {
     try {
       const response = await fetch(`/api/v1/files/${file.id}/download`)
@@ -442,6 +448,20 @@ export function FileList({
               <p className="font-medium text-slate-900 dark:text-white">
                 {file.originalFileName}
               </p>
+              {isPreviewable(file.originalFileName, file.fileSize) && (
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-6 w-6 shrink-0 text-blue-600 hover:text-blue-700 dark:text-blue-400"
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    handlePreview(file)
+                  }}
+                  title="Preview file"
+                >
+                  <FileSearch className="w-3.5 h-3.5" />
+                </Button>
+              )}
               {getCategoryBadge(file.fileCategory, file.isPrimaryModel)}
               {file.isItemThumbnail && (
                 <Badge variant="secondary" className="text-xs">
@@ -600,18 +620,6 @@ export function FileList({
     return (
       <div className="flex justify-end gap-1">
         {!readOnly && <Slot name="file-row-actions" props={{ file }} />}
-        {isPreviewable(file.originalFileName, file.fileSize) && (
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() =>
-              onPreviewFile ? onPreviewFile(file) : setPreviewFile(file)
-            }
-            title="Preview"
-          >
-            <FileSearch className="w-4 h-4" />
-          </Button>
-        )}
         {isViewableCAD(file) && onViewCAD && (
           <Button
             variant="ghost"
@@ -742,6 +750,7 @@ export function FileList({
         getRowId={(row) => row.id}
         enableRowActions={true}
         renderRowActions={renderRowActions}
+        onRowDoubleClick={handlePreview}
         emptyMessage="No files attached to this item"
         emptyDescription={
           readOnly

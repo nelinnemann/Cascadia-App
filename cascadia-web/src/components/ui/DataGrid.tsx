@@ -128,6 +128,7 @@ export interface DataGridProps<T> {
   enableGlobalFilter?: boolean
   enableHierarchy?: boolean
   enableRowActions?: boolean
+  onRowDoubleClick?: (row: T) => void
 
   // Server-side pagination
   serverSidePagination?: boolean
@@ -345,6 +346,7 @@ export function DataGrid<T>({
   // Callbacks
   onCellEdit,
   renderRowActions,
+  onRowDoubleClick,
   // Context Menu
   enableContextMenu = false,
   getRowUrl,
@@ -921,6 +923,7 @@ export function DataGrid<T>({
                   <TableRow
                     key={row.id}
                     data-state={row.getIsSelected() ? 'selected' : undefined}
+                    onDoubleClick={() => onRowDoubleClick?.(row.original)}
                   >
                     {row.getVisibleCells().map((cell, index) => {
                       const meta = cell.column.columnDef.meta
