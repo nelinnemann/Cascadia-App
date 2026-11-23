@@ -34,6 +34,7 @@ import {
   getThumbnailImageExtensions,
   isFileTypeAllowed,
   isThumbnailableImage,
+  nativeCadNamingMode,
   sanitizeFilename,
   validateFileSize,
 } from '../utils'
@@ -172,6 +173,19 @@ export class FileService {
 
     if (!item) {
       throw new NotFoundError('Item', itemId)
+    }
+
+    // Native CAD naming is a deployment policy. Preserve the submitted name
+    // unless the deployment opted into PDM-owned names.
+    const submittedFileName = metadata.originalFileName
+    if (nativeCadNamingMode() === 'itemNumber') {
+      metadata.originalFileName = canonicalizeItemFileName(
+        item.itemNumber,
+        submittedFileName,
+      )
+      if (metadata.originalFileName !== submittedFileName) {
+        metadata.sourceFileName = submittedFileName
+      }
     }
 
     const normalizedApplicability = await this.normalizeApplicability(
@@ -1380,6 +1394,16 @@ export class FileService {
 
       if (!item) {
         throw new NotFoundError('Item', file.itemId)
+      }
+
+      // In PDM-owned naming mode a new version keeps the version chain's
+      // existing name. In preserve mode the submitted name is retained.
+      if (nativeCadNamingMode() === 'itemNumber') {
+        const submittedFileName = metadata.originalFileName
+        metadata.originalFileName = file.originalFileName
+        if (metadata.originalFileName !== submittedFileName) {
+          metadata.sourceFileName = submittedFileName
+        }
       }
 
       // Create new version

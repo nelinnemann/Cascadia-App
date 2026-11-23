@@ -268,6 +268,50 @@ export function isCADFile(filename: string): boolean {
 }
 
 /**
+ * Deployment policy for native CAD filenames.
+ *
+ * `preserve` keeps the filename the client submitted. `itemNumber` rewrites
+ * native CAD files to `<itemNumber>.<extension>` so local working-copy names
+ * cannot rename the vault attachment.
+ *
+ * Defaults to `preserve` so existing deployments are unchanged. NILATEK's
+ * fork sets `VAULT_NATIVE_CAD_NAMING=itemNumber`.
+ */
+export type NativeCadNamingMode = 'preserve' | 'itemNumber'
+
+export function nativeCadNamingMode(): NativeCadNamingMode {
+  const value = process.env.VAULT_NATIVE_CAD_NAMING?.trim().toLowerCase()
+  return value === 'itemnumber' ? 'itemNumber' : 'preserve'
+}
+
+/**
+ * PDM-owned filename for an item attachment.
+ *
+ * CAD files are named after the item, not after the local file the user
+ * happened to have open. Storage paths already contain a UUID, so the visible
+ * name can stay human-readable and stable across versions.
+ *
+ * Non-CAD attachments (PDFs, images, documents) keep their submitted name:
+ * their filename carries meaning the database cannot reconstruct (for example
+ * which drawing layout a PDF represents).
+ */
+export function canonicalizeItemFileName(
+  itemNumber: string | null | undefined,
+  fileName: string,
+): string {
+  if (!itemNumber || !isCADFile(fileName)) return fileName
+
+  const extension = path.extname(fileName)
+  if (!extension) return fileName
+
+  const itemStem = path.basename(
+    sanitizeFilename(itemNumber),
+    path.extname(itemNumber),
+  )
+  return `${itemStem}${extension.toLowerCase()}`
+}
+
+/**
  * Build a filename-hint matcher.
  *
  * Each term must appear as a whole token — bounded by the start of the name or
