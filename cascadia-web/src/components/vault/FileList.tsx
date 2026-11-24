@@ -83,13 +83,14 @@ const extensionOrderRank = (file: FileRecord): number => {
 }
 
 const compareFilesForDisplay = (a: FileRecord, b: FileRecord): number => {
-  // The primary file is the one the user cares about, whatever the CAD system.
+  // DWG/DXF is the native model and must lead even when legacy data marks a
+  // STEP file as primary. Within a format group the primary file still leads.
+  const extensionRank = extensionOrderRank(a) - extensionOrderRank(b)
+  if (extensionRank !== 0) return extensionRank
+
   if (Boolean(a.isPrimaryModel) !== Boolean(b.isPrimaryModel)) {
     return a.isPrimaryModel ? -1 : 1
   }
-
-  const extensionRank = extensionOrderRank(a) - extensionOrderRank(b)
-  if (extensionRank !== 0) return extensionRank
 
   const rank = categoryOrderRank(a) - categoryOrderRank(b)
   if (rank !== 0) return rank
@@ -429,7 +430,7 @@ export function FileList({
         <Badge variant={variant} className="text-xs">
           {label}
         </Badge>
-        {file.isPrimaryModel && (
+        {file.isPrimaryModel && ['dwg', 'dxf'].includes(extension) && (
           <Badge variant="success" className="text-xs">
             Primary
           </Badge>
