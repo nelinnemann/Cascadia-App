@@ -409,9 +409,19 @@ app.get(
         // Exempt types (work instructions) take the lock on main regardless of
         // protection — they are editable there by design, so reporting main as
         // protected would push the client into an ECO flow they do not use.
+        const designProtected = await BranchService.isMainBranchProtected(
+          item.designId,
+        )
+        const scope =
+          designProtected && !(await isBranchProtectionExempt(item.itemType))
+            ? await BranchService.getBranchProtectionScope(item.designId)
+            : 'design'
         isMainProtected = (await isBranchProtectionExempt(item.itemType))
           ? false
-          : await BranchService.isMainBranchProtected(item.designId)
+          : scope === 'released-items'
+            ? designProtected &&
+              (await BranchService.isItemReleased(item.designId, item.state))
+            : designProtected
         if (!branchInfo && !isMainProtected) {
           const mainBranch = await BranchService.getMainBranch(item.designId)
           lockBranchId = mainBranch?.id ?? null

@@ -459,6 +459,19 @@ export class CheckoutService {
     return row ? isBranchProtectionExempt(row.itemType) : false
   }
 
+  private static async isReleasedMaster(
+    itemMasterId: string,
+    designId: string,
+  ): Promise<boolean> {
+    const row = await db
+      .select({ state: items.state })
+      .from(items)
+      .where(eq(items.masterId, itemMasterId))
+      .limit(1)
+      .then((rows) => rows.at(0))
+    return row ? BranchService.isItemReleased(designId, row.state) : false
+  }
+
   static async checkout(
     data: CheckoutInput,
     userId: string,
@@ -497,9 +510,23 @@ export class CheckoutService {
         branch.designId,
       )
       if (isProtected && !(await this.isExemptMaster(validated.itemMasterId))) {
-        throw new ValidationError(
-          'Cannot checkout items on the protected main branch. Use an ECO or workspace branch.',
+        const scope = await BranchService.getBranchProtectionScope(
+          branch.designId,
         )
+        const blocked =
+          scope === 'released-items'
+            ? await this.isReleasedMaster(
+                validated.itemMasterId,
+                branch.designId,
+              )
+            : true
+        if (blocked) {
+          throw new ValidationError(
+            scope === 'released-items'
+              ? 'Cannot checkout released items on the protected main branch. Use an ECO or workspace branch.'
+              : 'Cannot checkout items on the protected main branch. Use an ECO or workspace branch.',
+          )
+        }
       }
     }
 
@@ -1385,7 +1412,10 @@ export class CheckoutService {
       const isProtected = await BranchService.isMainBranchProtected(
         branch.designId,
       )
-      if (isProtected) {
+      const scope = isProtected
+        ? await BranchService.getBranchProtectionScope(branch.designId)
+        : 'design'
+      if (isProtected && scope === 'design') {
         throw new ValidationError(
           'Cannot create items directly on the main branch',
         )
