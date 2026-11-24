@@ -25,6 +25,7 @@ import {
 } from '../../db/schema'
 import { StorageFactory } from '../storage'
 import {
+  canonicalizeItemFileName,
   detectFileCategory,
   extractFileMetadata,
   generateFileHash,
