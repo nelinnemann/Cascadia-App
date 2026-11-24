@@ -68,11 +68,28 @@ const categoryOrderRank = (file: FileRecord): number => {
   return FILE_CATEGORY_VALUES.indexOf(file.fileCategory)
 }
 
+/**
+ * Workshop order: native DWG/DXF first, then STEP/IGES exchange models, then
+ * PDF drawings, then thumbnails/previews.
+ */
+const extensionOrderRank = (file: FileRecord): number => {
+  const name = String(file.originalFileName ?? file.fileName ?? '').toLowerCase()
+  const ext = name.split('.').pop() ?? ''
+  if (ext === 'dwg' || ext === 'dxf') return 0
+  if (ext === 'step' || ext === 'stp' || ext === 'iges' || ext === 'igs') return 1
+  if (ext === 'pdf') return 2
+  if (['png', 'jpg', 'jpeg', 'webp', 'gif', 'svg'].includes(ext)) return 3
+  return 4
+}
+
 const compareFilesForDisplay = (a: FileRecord, b: FileRecord): number => {
   // The primary file is the one the user cares about, whatever the CAD system.
   if (Boolean(a.isPrimaryModel) !== Boolean(b.isPrimaryModel)) {
     return a.isPrimaryModel ? -1 : 1
   }
+
+  const extensionRank = extensionOrderRank(a) - extensionOrderRank(b)
+  if (extensionRank !== 0) return extensionRank
 
   const rank = categoryOrderRank(a) - categoryOrderRank(b)
   if (rank !== 0) return rank
@@ -380,30 +397,43 @@ export function FileList({
   }
 
   const getCategoryBadge = (file: FileRecord) => {
-    const primary = file.isPrimaryModel ? (
-      <Badge variant="success" className="text-xs">
-        Primary
-      </Badge>
-    ) : null
+    const extension = file.originalFileName.toLowerCase().split('.').pop() ?? ''
+    const isStep = ['step', 'stp', 'iges', 'igs'].includes(extension)
+    const is2dDrawing = ['pdf', 'idw', 'slddrw', 'dft', 'drw',
+      'catdrawing'].includes(extension)
 
-    // The stored category is the user's or the server's classification. It is
-    // deliberately not overridden by an extension rule here: the category
-    // picker and filter use the same field, so the badge must agree with them.
-    if (!isFileCategory(file.fileCategory)) {
-      return primary
+    let label: string | null = null
+    let variant: 'default' | 'secondary' | 'outline' | 'success' = 'secondary'
+
+    if (file.isPrimaryModel && ['dwg', 'dxf'].includes(extension)) {
+      // The native BricsCAD model is the actual CAD model; the exported
+      // STEP/PDF files are derivatives of it.
+      label = 'CAD Model'
+      variant = 'default'
+    } else if (isStep) {
+      label = '3D STEP'
+    } else if (is2dDrawing) {
+      label = '2D Drawing'
+    } else if (isFileCategory(file.fileCategory)) {
+      const config = FILE_CATEGORY_DEFINITIONS[file.fileCategory]
+      if (config.badged) {
+        label = config.badgeLabel
+        variant = config.badgeVariant as typeof variant
+      }
     }
 
-    const config = FILE_CATEGORY_DEFINITIONS[file.fileCategory]
-    if (!config.badged) {
-      return primary
-    }
+    if (!label) return null
 
     return (
       <div className="flex items-center gap-1">
-        <Badge variant={config.badgeVariant} className="text-xs">
-          {config.badgeLabel}
+        <Badge variant={variant} className="text-xs">
+          {label}
         </Badge>
-        {primary}
+        {file.isPrimaryModel && (
+          <Badge variant="success" className="text-xs">
+            Primary
+          </Badge>
+        )}
       </div>
     )
   }
