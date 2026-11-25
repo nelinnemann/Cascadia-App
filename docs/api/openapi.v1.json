@@ -284,11 +284,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "models": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "id": {
                                 "type": "string"
@@ -3378,8 +3381,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "github": {
                           "type": "boolean"
@@ -4129,8 +4134,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -6934,8 +6941,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "design": {
                           "additionalProperties": {},
@@ -7086,10 +7095,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "context": {
+                          "additionalProperties": false,
                           "properties": {
                             "id": {
                               "anyOf": [
@@ -7132,9 +7144,11 @@
                         },
                         "interfaces": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "ends": {
                                 "items": {
+                                  "additionalProperties": false,
                                   "properties": {
                                     "elementItemId": {
                                       "format": "uuid",
@@ -7220,6 +7234,7 @@
                         },
                         "layout": {
                           "additionalProperties": {
+                            "additionalProperties": false,
                             "properties": {
                               "x": {
                                 "maximum": 1000000,
@@ -7247,9 +7262,11 @@
                         },
                         "roots": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "allocatedRequirements": {
                                 "items": {
+                                  "additionalProperties": false,
                                   "properties": {
                                     "itemId": {
                                       "format": "uuid",
@@ -7351,6 +7368,7 @@
                               },
                               "ports": {
                                 "items": {
+                                  "additionalProperties": false,
                                   "properties": {
                                     "description": {
                                       "maxLength": 500,
@@ -7386,6 +7404,7 @@
                               },
                               "realizedBy": {
                                 "items": {
+                                  "additionalProperties": false,
                                   "properties": {
                                     "itemId": {
                                       "format": "uuid",
@@ -7481,6 +7500,7 @@
                           "type": "array"
                         },
                         "totals": {
+                          "additionalProperties": false,
                           "properties": {
                             "allocated": {
                               "maximum": 9007199254740991,
@@ -7587,8 +7607,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -7765,8 +7787,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "interfaceId": {
                           "format": "uuid",
@@ -7925,8 +7949,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "relationshipId": {
                           "format": "uuid",
@@ -7992,8 +8018,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -8092,11 +8120,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "layout": {
                           "additionalProperties": {
+                            "additionalProperties": false,
                             "properties": {
                               "x": {
                                 "maximum": 1000000,
@@ -8400,10 +8431,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "context": {
+                          "additionalProperties": false,
                           "properties": {
                             "id": {
                               "anyOf": [
@@ -8446,9 +8480,11 @@
                         },
                         "rows": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "allocatedTo": {
                                 "items": {
+                                  "additionalProperties": false,
                                   "properties": {
                                     "itemId": {
                                       "format": "uuid",
@@ -8474,6 +8510,7 @@
                                     },
                                     "realizedBy": {
                                       "items": {
+                                        "additionalProperties": false,
                                         "properties": {
                                           "itemId": {
                                             "format": "uuid",
@@ -8591,6 +8628,7 @@
                                 "type": "array"
                               },
                               "requirement": {
+                                "additionalProperties": false,
                                 "properties": {
                                   "id": {
                                     "format": "uuid",
@@ -8658,6 +8696,7 @@
                               },
                               "satisfiedBy": {
                                 "items": {
+                                  "additionalProperties": false,
                                   "properties": {
                                     "itemId": {
                                       "format": "uuid",
@@ -8732,6 +8771,7 @@
                               },
                               "verifiedBy": {
                                 "items": {
+                                  "additionalProperties": false,
                                   "properties": {
                                     "executionStatus": {
                                       "type": [
@@ -8825,6 +8865,7 @@
                           "type": "array"
                         },
                         "totals": {
+                          "additionalProperties": false,
                           "properties": {
                             "allocated": {
                               "maximum": 9007199254740991,
@@ -8832,6 +8873,7 @@
                               "type": "integer"
                             },
                             "gaps": {
+                              "additionalProperties": false,
                               "properties": {
                                 "not_allocated": {
                                   "maximum": 9007199254740991,
@@ -9768,11 +9810,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "availableItemTypes": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "count": {
                                 "type": "number"
@@ -9791,6 +9836,7 @@
                         },
                         "edges": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "data": {
                                 "additionalProperties": {},
@@ -9825,6 +9871,7 @@
                         },
                         "nodes": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "data": {
                                 "additionalProperties": {},
@@ -9837,6 +9884,7 @@
                                 "type": "string"
                               },
                               "position": {
+                                "additionalProperties": false,
                                 "properties": {
                                   "x": {
                                     "type": "number"
@@ -10715,11 +10763,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "items": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "createdAt": {
                                 "type": [
@@ -10908,11 +10959,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "events": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "actorId": {
                                 "anyOf": [
@@ -11109,11 +11163,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "consumers": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "abandonedAt": {
                                 "type": [
@@ -11249,8 +11306,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "forgotten": {
                           "type": "boolean"
@@ -11312,8 +11371,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "abandonedAt": {
                           "type": [
@@ -11429,8 +11490,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "abandonedAt": {
                           "type": [
@@ -11535,11 +11598,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "types": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "description": {
                                 "type": "string"
@@ -11624,11 +11690,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "extensions": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "description": {
                                 "type": [
@@ -11701,6 +11770,7 @@
                         },
                         "operations": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "description": {
                                 "type": "string"
@@ -12908,10 +12978,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "file": {
+                          "additionalProperties": false,
                           "properties": {
                             "categorySource": {
                               "enum": [
@@ -13098,7 +13171,7 @@
     },
     "/api/v1/files/{fileId}/convert": {
       "post": {
-        "description": "STEP (.step/.stp) and IGES (.iges/.igs) only. Returns 202 with the id of a background job — poll GET /api/v1/jobs/:id for its result; the STL and GLB appear as new files on the target item when it completes. The body is optional: an absent or unparseable one runs on the defaults below.",
+        "description": "STEP (.step/.stp) and IGES (.iges/.igs) only. Returns 202 with the id of a background job — poll GET /api/v1/jobs/:id for its result; the requested meshes (GLB and/or STL) appear as new files on the target item when it completes. The body is optional: an absent or unparseable one runs on the defaults below.",
         "operationId": "postApiV1FilesByFileIdConvert",
         "parameters": [
           {
@@ -13132,11 +13205,7 @@
                     "type": "string"
                   },
                   "outputFormats": {
-                    "default": [
-                      "glb",
-                      "stl"
-                    ],
-                    "description": "Derivative formats to store. GLB is the web viewer format; STL is only needed for 3D printing/import. Defaults to both, configurable by deployment.",
+                    "description": "Derivative formats to store: `glb` (the web viewer format) and/or `stl` (3D printing, CAM, import into other tools). Omitted, the server uses its configured default, `CAD_DEFAULT_OUTPUT_FORMATS` — both unless the deployment changes it. STL is stored regardless when `decompose` is true, and as a fallback when none of the requested formats could be produced (an IGES source has no GLB).",
                     "items": {
                       "enum": [
                         "glb",
@@ -13144,6 +13213,7 @@
                       ],
                       "type": "string"
                     },
+                    "minItems": 1,
                     "type": "array"
                   },
                   "targetItemId": {
@@ -13164,8 +13234,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "jobId": {
                           "format": "uuid",
@@ -13682,8 +13754,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "jobId": {
                           "format": "uuid",
@@ -13826,8 +13900,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "jobId": {
                           "format": "uuid",
@@ -14026,8 +14102,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "jobId": {
                           "format": "uuid",
@@ -14196,8 +14274,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "jobId": {
                           "format": "uuid",
@@ -14802,8 +14882,342 @@
     },
     "/api/v1/items": {
       "get": {
+        "description": "Lists one design’s items at a version context (`designId`, with `branch`, `commit` or `tag`), or, without `designId`, searches one item type across the designs the caller can read (narrowed by `programId`). `includeFileSummary=true` adds `fileSummary`, keyed by item id: how many files each listed item has, by category and by extension — counted exactly as `GET /api/v1/items/{itemId}/files` would list them in the same version context, so a file uploaded on an open change-order branch is counted on that branch and nowhere else.",
         "operationId": "getApiV1Items",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "designId",
+            "required": false,
+            "schema": {
+              "description": "List one design's items, resolved at a version context: main unless `branch`, `commit` or `tag` names another.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "programId",
+            "required": false,
+            "schema": {
+              "description": "List the items of every design in a program. Ignored with `designId`.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "branch",
+            "required": false,
+            "schema": {
+              "description": "A branch of `designId`, by name (`main`, `eco/ECO-0001`). Ignored with `commit` or `tag`.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "commit",
+            "required": false,
+            "schema": {
+              "description": "A commit of `designId`, by id. Wins over `tag` and `branch`.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "tag",
+            "required": false,
+            "schema": {
+              "description": "A tag of `designId`, by id. Wins over `branch`.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "itemType",
+            "required": false,
+            "schema": {
+              "description": "Item type to list. Without `designId`, defaults to `Part`.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "required": false,
+            "schema": {
+              "description": "Lifecycle state to filter on.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "search",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "globalSearch",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "includeDeleted",
+            "required": false,
+            "schema": {
+              "description": "`true` to include soft-deleted items. With `designId` only.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "description": "Page size. Defaults to 100.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "description": "Rows to skip. Defaults to 0.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortField",
+            "required": false,
+            "schema": {
+              "description": "Without `designId` only.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sortDirection",
+            "required": false,
+            "schema": {
+              "description": "`asc` or `desc`. Without `designId` only.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "columnFilters",
+            "required": false,
+            "schema": {
+              "description": "A JSON object of grid column filters. Without `designId` only.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "includeCounts",
+            "required": false,
+            "schema": {
+              "description": "`true`, with `countStates`, to add `counts`.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "countStates",
+            "required": false,
+            "schema": {
+              "description": "Comma-separated states to count across every page.",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "includeFileSummary",
+            "required": false,
+            "schema": {
+              "description": "`true` to add `fileSummary`: a count of each listed item’s files, by category and by extension. Requires `documents:read`.",
+              "enum": [
+                "true",
+                "false"
+              ],
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "data": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "context": {
+                          "description": "The version context the items were resolved at. With `designId` only.",
+                          "type": "string"
+                        },
+                        "counts": {
+                          "additionalProperties": {
+                            "maximum": 9007199254740991,
+                            "minimum": -9007199254740991,
+                            "type": "integer"
+                          },
+                          "description": "Items per state named in `countStates`, with `includeCounts=true`.",
+                          "propertyNames": {
+                            "type": "string"
+                          },
+                          "type": "object"
+                        },
+                        "fileSummary": {
+                          "additionalProperties": {
+                            "additionalProperties": false,
+                            "properties": {
+                              "byCategory": {
+                                "additionalProperties": false,
+                                "description": "Files per category; every category is present, zero when absent. A file with no category counts toward `total` only.",
+                                "properties": {
+                                  "analysis": {
+                                    "maximum": 9007199254740991,
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  },
+                                  "cad_model": {
+                                    "maximum": 9007199254740991,
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  },
+                                  "drawing": {
+                                    "maximum": 9007199254740991,
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  },
+                                  "other": {
+                                    "maximum": 9007199254740991,
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  },
+                                  "reference": {
+                                    "maximum": 9007199254740991,
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  },
+                                  "specification": {
+                                    "maximum": 9007199254740991,
+                                    "minimum": 0,
+                                    "type": "integer"
+                                  }
+                                },
+                                "required": [
+                                  "cad_model",
+                                  "drawing",
+                                  "specification",
+                                  "analysis",
+                                  "reference",
+                                  "other"
+                                ],
+                                "type": "object"
+                              },
+                              "byExtension": {
+                                "additionalProperties": {
+                                  "maximum": 9007199254740991,
+                                  "minimum": 0,
+                                  "type": "integer"
+                                },
+                                "description": "Files per extension, lowercased and without the dot (`pdf`, `step`, `stp`); only extensions present appear. A file with no extension counts toward `total` only.",
+                                "propertyNames": {
+                                  "type": "string"
+                                },
+                                "type": "object"
+                              },
+                              "total": {
+                                "description": "Files `GET /api/v1/items/{itemId}/files` lists for this item in the same version context, each counted once at its latest version.",
+                                "maximum": 9007199254740991,
+                                "minimum": 0,
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "total",
+                              "byCategory",
+                              "byExtension"
+                            ],
+                            "type": "object"
+                          },
+                          "description": "With `includeFileSummary=true`: one entry per listed item, keyed by item id.",
+                          "propertyNames": {
+                            "type": "string"
+                          },
+                          "type": "object"
+                        },
+                        "items": {
+                          "items": {
+                            "additionalProperties": {},
+                            "properties": {
+                              "id": {
+                                "format": "uuid",
+                                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
+                                "type": "string"
+                              },
+                              "itemNumber": {
+                                "type": "string"
+                              },
+                              "itemType": {
+                                "type": "string"
+                              },
+                              "masterId": {
+                                "format": "uuid",
+                                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$",
+                                "type": "string"
+                              },
+                              "revision": {
+                                "type": "string"
+                              },
+                              "state": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "masterId",
+                              "itemNumber",
+                              "itemType",
+                              "revision",
+                              "state"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "total": {
+                          "maximum": 9007199254740991,
+                          "minimum": -9007199254740991,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "items",
+                        "total"
+                      ],
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Success"
+          },
           "400": {
             "$ref": "#/components/responses/ValidationError"
           },
@@ -14820,6 +15234,7 @@
             "$ref": "#/components/responses/ServerError"
           }
         },
+        "summary": "List items",
         "tags": [
           "Items"
         ]
@@ -16623,8 +17038,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "commit": {
                           "additionalProperties": {},
@@ -16883,8 +17300,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "jobId": {
                           "format": "uuid",
@@ -18224,8 +18643,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -18716,8 +19137,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "fileId": {
                           "format": "uuid",
@@ -18878,8 +19301,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "fileId": {
                           "format": "uuid",
@@ -19005,8 +19430,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "count": {
                           "maximum": 9007199254740991,
@@ -19020,12 +19447,15 @@
                               "applicability": {
                                 "anyOf": [
                                   {
+                                    "additionalProperties": false,
                                     "properties": {
                                       "any": {
                                         "items": {
+                                          "additionalProperties": false,
                                           "properties": {
                                             "all": {
                                               "items": {
+                                                "additionalProperties": false,
                                                 "properties": {
                                                   "family": {
                                                     "maxLength": 50,
@@ -19205,15 +19635,19 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "versions": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "branch": {
                                 "anyOf": [
                                   {
+                                    "additionalProperties": false,
                                     "properties": {
                                       "branchType": {
                                         "type": "string"
@@ -19262,6 +19696,7 @@
                               "file": {
                                 "anyOf": [
                                   {
+                                    "additionalProperties": false,
                                     "properties": {
                                       "fileName": {
                                         "type": "string"
@@ -19326,6 +19761,7 @@
                               },
                               "files": {
                                 "items": {
+                                  "additionalProperties": false,
                                   "properties": {
                                     "fileName": {
                                       "type": "string"
@@ -22375,11 +22811,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "packages": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "description": {
                                 "type": "string"
@@ -22469,8 +22908,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -22531,8 +22972,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "part": {
                           "additionalProperties": {},
@@ -22971,8 +23414,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "part": {
                           "additionalProperties": {},
@@ -23232,11 +23677,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "findings": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "code": {
                                 "type": "string"
@@ -23365,8 +23813,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "children": {
                           "items": {},
@@ -23379,6 +23829,7 @@
                         },
                         "findings": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "itemNumber": {
                                 "type": "string"
@@ -23396,6 +23847,7 @@
                           "type": "array"
                         },
                         "root": {
+                          "additionalProperties": false,
                           "properties": {
                             "designation": {
                               "type": "string"
@@ -23442,9 +23894,11 @@
                           "type": "object"
                         },
                         "validation": {
+                          "additionalProperties": false,
                           "properties": {
                             "errors": {
                               "items": {
+                                "additionalProperties": false,
                                 "properties": {
                                   "family": {
                                     "type": "string"
@@ -23473,6 +23927,7 @@
                             },
                             "warnings": {
                               "items": {
+                                "additionalProperties": false,
                                 "properties": {
                                   "family": {
                                     "type": "string"
@@ -23589,11 +24044,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "errors": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "family": {
                                 "type": "string"
@@ -23622,6 +24080,7 @@
                         },
                         "warnings": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "family": {
                                 "type": "string"
@@ -24206,7 +24665,7 @@
         ]
       },
       "post": {
-        "description": "Programs are the permission boundary: the creator is not made a member, so add members with POST /api/v1/programs/:id/members. `code` is unique system-wide.",
+        "description": "Programs are the permission boundary: the creator is not made a member, so add members with POST /api/v1/programs/:id/members. `code` is unique system-wide. A `settings.branchProtectionScope` other than `design` also requires `system:manage`, as does changing it later through PUT.",
         "operationId": "postApiV1Programs",
         "requestBody": {
           "content": {
@@ -24240,13 +24699,27 @@
                     "type": "string"
                   },
                   "settings": {
-                    "additionalProperties": {},
+                    "additionalProperties": false,
                     "properties": {
+                      "approvalWorkflow": {
+                        "items": {
+                          "maxLength": 100,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "maxItems": 50,
+                        "type": "array"
+                      },
                       "branchProtectionScope": {
                         "enum": [
                           "design",
                           "released-items"
                         ],
+                        "type": "string"
+                      },
+                      "changeOrderNumberFormat": {
+                        "maxLength": 100,
+                        "minLength": 1,
                         "type": "string"
                       }
                     },
@@ -24299,8 +24772,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "program": {
                           "additionalProperties": {},
@@ -24473,13 +24948,27 @@
                     "type": "string"
                   },
                   "settings": {
-                    "additionalProperties": {},
+                    "additionalProperties": false,
                     "properties": {
+                      "approvalWorkflow": {
+                        "items": {
+                          "maxLength": 100,
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        "maxItems": 50,
+                        "type": "array"
+                      },
                       "branchProtectionScope": {
                         "enum": [
                           "design",
                           "released-items"
                         ],
+                        "type": "string"
+                      },
+                      "changeOrderNumberFormat": {
+                        "maxLength": 100,
+                        "minLength": 1,
                         "type": "string"
                       }
                     },
@@ -24566,11 +25055,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "availableItemTypes": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "count": {
                                 "type": "number"
@@ -24589,6 +25081,7 @@
                         },
                         "edges": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "data": {
                                 "additionalProperties": {},
@@ -24623,6 +25116,7 @@
                         },
                         "nodes": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "data": {
                                 "additionalProperties": {},
@@ -24635,6 +25129,7 @@
                                 "type": "string"
                               },
                               "position": {
+                                "additionalProperties": false,
                                 "properties": {
                                   "x": {
                                     "type": "number"
@@ -24973,11 +25468,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "designs": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "allocated": {
                                 "maximum": 9007199254740991,
@@ -24999,6 +25497,7 @@
                                 "type": "string"
                               },
                               "gaps": {
+                                "additionalProperties": false,
                                 "properties": {
                                   "not_allocated": {
                                     "maximum": 9007199254740991,
@@ -25062,6 +25561,7 @@
                         },
                         "openGaps": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "designCode": {
                                 "type": "string"
@@ -25124,6 +25624,7 @@
                           "type": "string"
                         },
                         "totals": {
+                          "additionalProperties": false,
                           "properties": {
                             "allocated": {
                               "maximum": 9007199254740991,
@@ -25131,6 +25632,7 @@
                               "type": "integer"
                             },
                             "gaps": {
+                              "additionalProperties": false,
                               "properties": {
                                 "not_allocated": {
                                   "maximum": 9007199254740991,
@@ -25287,8 +25789,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "affirmed": {
                           "maximum": 9007199254740991,
@@ -25297,6 +25801,7 @@
                         },
                         "results": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "outcome": {
                                 "enum": [
@@ -25505,8 +26010,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "created": {
                           "maximum": 9007199254740991,
@@ -25515,6 +26022,7 @@
                         },
                         "errors": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "error": {
                                 "type": "string"
@@ -25562,8 +26070,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "created": {
                           "maximum": 9007199254740991,
@@ -25572,6 +26082,7 @@
                         },
                         "errors": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "error": {
                                 "type": "string"
@@ -25851,8 +26362,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "reasons": {
                           "items": {
@@ -27076,8 +27589,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -27138,11 +27653,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "items": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "id": {
                                 "format": "uuid",
@@ -27271,8 +27789,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -27794,8 +28314,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "verificationStatus": {
                           "type": "string"
@@ -27877,14 +28399,17 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "verificationStatus": {
                           "const": "Waived",
                           "type": "string"
                         },
                         "verificationWaiver": {
+                          "additionalProperties": false,
                           "properties": {
                             "note": {
                               "type": "string"
@@ -28941,8 +29466,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "draftManifestId": {
                           "type": [
@@ -28952,6 +29479,7 @@
                         },
                         "entries": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "hash": {
                                 "type": "string"
@@ -29511,11 +30039,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "items": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "id": {
                                 "format": "uuid",
@@ -29657,8 +30188,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -29719,11 +30252,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "items": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "elementKind": {
                                 "type": [
@@ -29862,8 +30398,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -29926,12 +30464,15 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "item": {
                           "anyOf": [
                             {
+                              "additionalProperties": false,
                               "properties": {
                                 "elementKind": {
                                   "type": [
@@ -30084,10 +30625,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "port": {
+                          "additionalProperties": false,
                           "properties": {
                             "description": {
                               "maxLength": 500,
@@ -30198,8 +30742,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -30304,10 +30850,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "port": {
+                          "additionalProperties": false,
                           "properties": {
                             "description": {
                               "maxLength": 500,
@@ -30422,8 +30971,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -30484,11 +31035,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "items": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "id": {
                                 "format": "uuid",
@@ -30633,8 +31187,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "success": {
                           "type": "boolean"
@@ -31029,10 +31585,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "execution": {
+                          "additionalProperties": false,
                           "properties": {
                             "actualResults": {
                               "type": [
@@ -31167,11 +31726,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "executions": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "actualResults": {
                                 "type": [
@@ -31297,11 +31859,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "testCases": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "executionStatus": {
                                 "type": [
@@ -32490,11 +33055,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "subscriptions": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "consecutiveFailures": {
                                 "type": "number"
@@ -32693,8 +33261,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "secret": {
                           "type": [
@@ -32703,6 +33273,7 @@
                           ]
                         },
                         "subscription": {
+                          "additionalProperties": false,
                           "properties": {
                             "consecutiveFailures": {
                               "type": "number"
@@ -32865,8 +33436,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "deleted": {
                           "type": "boolean"
@@ -32927,10 +33500,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "subscription": {
+                          "additionalProperties": false,
                           "properties": {
                             "consecutiveFailures": {
                               "type": "number"
@@ -33132,10 +33708,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "subscription": {
+                          "additionalProperties": false,
                           "properties": {
                             "consecutiveFailures": {
                               "type": "number"
@@ -33297,11 +33876,14 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "deliveries": {
                           "items": {
+                            "additionalProperties": false,
                             "properties": {
                               "attemptCount": {
                                 "type": "number"
@@ -33443,10 +34025,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "subscription": {
+                          "additionalProperties": false,
                           "properties": {
                             "consecutiveFailures": {
                               "type": "number"
@@ -33608,10 +34193,13 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "subscription": {
+                          "additionalProperties": false,
                           "properties": {
                             "consecutiveFailures": {
                               "type": "number"
@@ -33773,13 +34361,16 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "secret": {
                           "type": "string"
                         },
                         "subscription": {
+                          "additionalProperties": false,
                           "properties": {
                             "consecutiveFailures": {
                               "type": "number"
@@ -39270,8 +39861,10 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "additionalProperties": false,
                   "properties": {
                     "data": {
+                      "additionalProperties": false,
                       "properties": {
                         "baseCommitId": {
                           "anyOf": [
